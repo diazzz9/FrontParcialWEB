@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Gestión de Facultades</h1>
+
+  <div class="form-section">
+    <h3>Nueva Facultad</h3>
+    <div class="form-row">
+      <input [(ngModel)]="nuevaFacultad.nombre" placeholder="Nombre" />
+      <input [(ngModel)]="nuevaFacultad.decano" placeholder="Decano" />
+      <input [(ngModel)]="nuevaFacultad.ubicacion" placeholder="Ubicación" />
+      <button (click)="crearFacultad()">Agregar</button>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Decano</th>
+        <th>Ubicación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of torneos">
+        <td>{{ f.id }}</td>
+        <td>{{ f.nombre }}</td>
+        <td>{{ f.decano }}</td>
+        <td>{{ f.ubicacion }}</td>
+      </tr>
+      <tr *ngIf="torneos.length === 0">
+        <td colspan="4" class="empty">Sin registros</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
